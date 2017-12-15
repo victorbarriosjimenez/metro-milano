@@ -1,0 +1,1539 @@
+{
+  "stations": {
+    "Duomo": {
+      "title": "Duomo",
+      "nodeId": "11",
+      "address": "Piazza del Duomo, 20122 Milano MI, Italia",
+      "lines": [
+        0,
+        2
+      ],
+      "adjacency": [
+        {
+          "nodeId": 10,
+          "distance": 1.0910
+        },
+        {
+          "nodeId": 12,
+          "distance": 0.4832
+        },
+        {
+          "nodeId": 50,
+          "distance": 0.8914
+        },
+        {
+          "nodeId": 51,
+          "distance": 0.5462
+        }
+      ],
+      "position": {
+        "lat": 45.464197,
+        "lon": 9.189631
+      }
+    },
+    "S.Babila": {
+      "title": "San Babila",
+      "nodeId": "10",
+      "address": "Piazza S. Babila, 20122 Milano MI, Italia",
+      "lines": [
+        0
+      ],
+      "adjacency": [
+        {
+          "nodeId": 9,
+          "distance": 0.8716
+        },
+        {
+          "nodeId": 11,
+          "distance": 1.0910
+        }
+      ],
+      "position": {
+        "lat": 45.466514,
+        "lon": 9.197534
+      }
+    },
+    "Palestro": {
+      "title": "Palestro",
+      "nodeId": "9",
+      "address": "Corso Venezia, 20122 Milano MI, Italia",
+      "lines": [
+        0
+      ],
+      "adjacency": [
+        {
+          "nodeId": 8,
+          "distance": 0.6338
+        },
+        {
+          "nodeId": 10,
+          "distance": 0.8716
+        }
+      ],
+      "position": {
+        "lat": 45.471418,
+        "lon": 9.20192
+      }
+    },
+    "PTaVenezia": {
+      "title": "Porta\nVenezia",
+      "nodeId": "8",
+      "address": "Piazza Guglielmo Oberdan, 20124 Milano MI, Italia",
+      "lines": [
+        0
+      ],
+      "adjacency": [
+        {
+          "nodeId": 7,
+          "distance": 1.0520
+        },
+        {
+          "nodeId": 9,
+          "distance": 0.6338
+        }
+      ],
+      "position": {
+        "lat": 45.474939,
+        "lon": 9.20516
+      }
+    },
+    "Lima": {
+      "title": "Lima",
+      "nodeId": "7",
+      "address": "Piazza Lima, 1, 20124 Milano MI, Italia",
+      "lines": [
+        0
+      ],
+      "adjacency": [
+        {
+          "nodeId": 6,
+          "distance": 0.8137
+        },
+        {
+          "nodeId": 8,
+          "distance": 1.0520
+        }
+      ],
+      "position": {
+        "lat": 45.480348,
+        "lon": 9.210975
+      }
+    },
+    "Loreto": {
+      "title": "Loreto",
+      "nodeId": "6",
+      "address": "Piazzale Loreto, Mezzanino M1, 20131 Milano MI, Italia",
+      "lines": [0, 1],
+      "adjacency": [{
+          "nodeId": 5,
+          "distance": 0.9325
+        },{
+          "nodeId": 7,
+          "distance": 0.8137
+        },{
+          "nodeId": 33,
+          "distance": 1.3412
+        },{
+          "nodeId": 34,
+          "distance": 0.8078
+        }],
+      "position": {
+        "lat": 45.484545,
+        "lon": 9.21546
+      }
+    },
+    "Pasteur": {
+      "title": "Pasteur",
+      "nodeId": "5",
+      "address": "Viale Monza, 20127 Milano MI, Italia",
+      "lines": [0],
+      "adjacency": [
+        {
+          "nodeId": 4,
+          "distance": 0.6325
+        },{
+          "nodeId": 6,
+          "distance": 0.9325
+        }],
+      "position": {
+        "lat": 45.491044,
+        "lon": 9.218164
+      }
+    },
+    "Rovereto": {
+      "title": "Rovereto",
+      "nodeId": "4",
+      "address": "Viale Monza, 20125 Milano MI, Italia",
+      "lines": [0],
+      "adjacency": [{
+          "nodeId": 3,
+          "distance": 0.6624
+        },{
+          "nodeId": 5,
+          "distance": 0.6325
+        }],
+      "position": {
+        "lat": 45.495654,
+        "lon": 9.219409
+      }
+    },
+    "Turro": {
+      "title": "Turro",
+      "nodeId": "3",
+      "address": " Viale Monza, 20125 Milano MI, Italia",
+      "lines": [0],
+      "adjacency": [{
+          "nodeId": 2,
+          "distance": 0.8693
+        },{
+          "nodeId": 4,
+          "distance": 0.6624
+        }],
+      "position": {
+        "lat": 45.500399,
+        "lon": 9.220986
+      }
+    },
+    "Gorla": {
+      "title": "Gorla",
+      "nodeId": "2",
+      "address": "Viale Monza, 20126 Milano MI, Italia",
+      "lines": [0],
+      "adjacency": [{
+          "nodeId": 1,
+          "distance": 0.7403
+        },{
+          "nodeId": 3,
+          "distance": 0.8693
+        }],
+      "position": {
+        "lat": 45.50673,
+        "lon": 9.222713
+      }
+    },
+    "Precotto": {
+      "title": "Precotto",
+      "nodeId": "1",
+      "address": "Viale Monza, 20128 Milano MI, Italia",
+      "lines": [0],
+      "adjacency": [{
+          "nodeId": 0,
+          "distance": 0.7464
+        },{
+          "nodeId": 2,
+          "distance": 0.7403
+        }],
+      "position": {
+        "lat": 45.512031,
+        "lon": 9.224483
+      }
+    },
+    "VillaSanGiovanni": {
+      "title": "Villa \nSan Giovanni",
+      "nodeId": "0",
+      "address": "Viale Monza, 20128 Milano MI, Italia",
+      "lines": [0],
+      "adjacency": [{
+          "nodeId": 1,
+          "distance": 0.7464
+        }],
+      "position": {
+        "lat": 45.517421,
+        "lon": 9.226125
+      }
+    },
+    "Cordusio": {
+      "title": "Cordusio",
+      "nodeId": "12",
+      "address": "Piazza Cordusio, 20123 Milano MI, Italia",
+      "lines": [0],
+      "adjacency": [{
+          "nodeId": 11,
+          "distance": 0.4832
+        },{
+          "nodeId": 13,
+          "distance": 0.6422
+        }],
+      "position": {
+        "lat": 45.465503,
+        "lon": 9.186225
+      }
+    },
+    "Cairoli": {
+      "title": "Cairoli",
+      "nodeId": "13",
+      "address": "Largo Cairoli, 20121 Milano MI, Italia",
+      "lines": [0],
+      "adjacency": [{
+          "nodeId": 12,
+          "distance": 0.6422
+        },{
+          "nodeId": 14,
+          "distance": 0.7728
+        }],
+      "position": {
+        "lat": 45.468233,
+        "lon": 9.182219
+      }
+    },
+    "Cadorna": {
+      "title": "Cadorna",
+      "nodeId": "14",
+      "address": "26 Russel Court, Cambridge, CB2 1HW",
+      "lines": [0, 1],
+      "adjacency": [{
+          "nodeId": 13,
+          "distance": 0.7728
+        },{
+          "nodeId": 15,
+          "distance": 1.3158
+        },{
+          "nodeId": 39,
+          "distance": 1.0741
+        },{
+          "nodeId": 40,
+          "distance": 0.9220
+        }],
+      "position": {
+        "lat": 45.467932,
+        "lon": 9.176393
+      }
+    },
+    "Conciliazione": {
+      "title": "Conciliazione",
+      "nodeId": "15",
+      "address": "26 Russel Court, Cambridge, CB2 1HW",
+      "lines": [0],
+      "adjacency": [{
+          "nodeId": 14,
+          "distance": 1.3158
+        },{
+          "nodeId": 16,
+          "distance": 0.7724
+        }],
+      "position": {
+        "lat": 45.467511,
+        "lon": 9.166469
+      }
+    },
+    "Pagano": {
+      "title": "Pagano",
+      "nodeId": "16",
+      "address": "26 Russel Court, Cambridge, CB2 1HW",
+      "lines": [0],
+      "adjacency": [{
+          "nodeId": 15,
+          "distance": 0.7724
+        },{
+          "nodeId": 17,
+          "distance": 0.8040
+        },{
+          "nodeId": 21,
+          "distance": 0.7638
+        }],
+      "position": {
+        "lat": 45.468293,
+        "lon": 9.161072
+      }
+    },
+    "Buonarroti": {
+      "title": "Buonarroti",
+      "nodeId": "17",
+      "address": "26 Russel Court, Cambridge, CB2 1HW",
+      "lines": [0],
+      "adjacency": [{
+          "nodeId": 16,
+          "distance": 0.8040
+        },{
+          "nodeId": 18,
+          "distance": 0.7303
+        }],
+      "position": {
+        "lat": 45.470385,
+        "lon": 9.155375
+      }
+    },
+    "AmendolaFiera": {
+      "title": "Amendola Fiera",
+      "nodeId": "18",
+      "address": "26 Russel Court, Cambridge, CB2 1HW",
+      "lines": [0],
+      "adjacency": [{
+          "nodeId": 17,
+          "distance": 0.7303
+        },{
+          "nodeId": 19,
+          "distance": 1.1542
+        }],
+      "position": {
+        "lat": 45.473665,
+        "lon": 9.150944
+      }
+    },
+    "LottoFiera": {
+      "title": "Lotto Fiera",
+      "nodeId": "19",
+      "address": "26 Russel Court, Cambridge, CB2 1HW",
+      "lines": [0],
+      "adjacency": [{
+          "nodeId": 18,
+          "distance": 1.1542
+        },{
+          "nodeId": 20,
+          "distance": 1.2947
+        }],
+      "position": {
+        "lat": 45.478916,
+        "lon": 9.143992
+      }
+    },
+    "Qt8": {
+      "title": "QT8",
+      "nodeId": "20",
+      "address": "26 Russel Court, Cambridge, CB2 1HW",
+      "lines": [0],
+      "adjacency": [{
+          "nodeId": 19,
+          "distance": 1.2947
+        }],
+      "position": {
+        "lat": 45.485934,
+        "lon": 9.13719
+      }
+    },
+    "Lanza": {
+      "title": "Lanza",
+      "nodeId": "39",
+      "address": "26 Russel Court, Cambridge, CB2 1HW",
+      "lines": [
+        1
+      ],
+      "adjacency": [
+        {
+          "nodeId": 38,
+          "distance": 0.7700
+        },
+        {
+          "nodeId": 14,
+          "distance": 0.5377
+        }
+      ],
+      "position": {
+        "lat": 45.472139,
+        "lon": 9.183325
+      }
+    },
+    "Moscova": {
+      "title": "Moscova",
+      "nodeId": "38",
+      "address": "26 Russel Court, Cambridge, CB2 1HW",
+      "lines": [
+        1
+      ],
+      "adjacency": [
+        {
+          "nodeId": 37,
+          "distance": 0.9731
+        },
+        {
+          "nodeId": 39,
+          "distance": 0.7700
+        }
+      ],
+      "position": {
+        "lat": 45.477809,
+        "lon": 9.184605
+      }
+    },
+    "Garibaldi": {
+      "title": "Garibaldi",
+      "nodeId": "37",
+      "address": "26 Russel Court, Cambridge, CB2 1HW",
+      "lines": [
+        1
+      ],
+      "adjacency": [
+        {
+          "nodeId": 36,
+          "distance": 1.0753
+        },
+        {
+          "nodeId": 38,
+          "distance": 0.9731
+        }
+      ],
+      "position": {
+        "lat": 45.484485,
+        "lon": 9.187669
+      }
+    },
+    "Gioia": {
+      "title": "Gioia",
+      "nodeId": "36",
+      "address": "26 Russel Court, Cambridge, CB2 1HW",
+      "lines": [
+        1
+      ],
+      "adjacency": [
+        {
+          "nodeId": 35,
+          "distance": 0.9457
+        },
+        {
+          "nodeId": 37,
+          "distance": 1.0753
+        }
+      ],
+      "position": {
+        "lat": 45.485406,
+        "lon": 9.195734
+      }
+    },
+    "Centrale": {
+      "title": "Centrale",
+      "nodeId": "35",
+      "address": "26 Russel Court, Cambridge, CB2 1HW",
+      "lines": [
+        1,
+        2
+      ],
+      "adjacency": [
+        {
+          "nodeId": 34,
+          "distance": 0.8747
+        },
+        {
+          "nodeId": 36,
+          "distance": 0.9457
+        },
+        {
+          "nodeId": 47,
+          "distance": 0.6288
+        },
+        {
+          "nodeId": 48,
+          "distance": 0.8585
+        }
+      ],
+      "position": {
+        "lat": 45.484879,
+        "lon": 9.202854
+      }
+    },
+    "Caiazzo": {
+      "title": "Caiazzo",
+      "nodeId": "34",
+      "address": "26 Russel Court, Cambridge, CB2 1HW",
+      "lines": [
+        1
+      ],
+      "adjacency": [
+        {
+          "nodeId": 6,
+          "distance": 0.8078
+        },
+        {
+          "nodeId": 35,
+          "distance": 0.8747
+        }
+      ],
+      "position": {
+        "lat": 45.485461,
+        "lon": 9.209431
+      }
+    },
+    "Piola": {
+      "title": "Piola",
+      "nodeId": "33",
+      "address": "26 Russel Court, Cambridge, CB2 1HW",
+      "lines": [
+        1
+      ],
+      "adjacency": [
+        {
+          "nodeId": 32,
+          "distance": 1.5090
+        },
+        {
+          "nodeId": 6,
+          "distance": 1.3412
+        }
+      ],
+      "position": {
+        "lat": 45.481197,
+        "lon": 9.225015
+      }
+    },
+    "LambrateFS": {
+      "title": "Lambrate FS",
+      "nodeId": "32",
+      "address": "26 Russel Court, Cambridge, CB2 1HW",
+      "lines": [
+        1
+      ],
+      "adjacency": [
+        {
+          "nodeId": 31,
+          "distance": 0.9617
+        },
+        {
+          "nodeId": 33,
+          "distance": 1.5090
+        }
+      ],
+      "position": {
+        "lat": 45.484679,
+        "lon": 9.235861
+      }
+    },
+    "Udine": {
+      "title": "Udine",
+      "nodeId": "31",
+      "address": "26 Russel Court, Cambridge, CB2 1HW",
+      "lines": [
+        1
+      ],
+      "adjacency": [
+        {
+          "nodeId": 30,
+          "distance": 1.2493
+        },
+        {
+          "nodeId": 32,
+          "distance": 0.9617
+        }
+      ],
+      "position": {
+        "lat": 45.491896,
+        "lon": 9.236649
+      }
+    },
+    "Cimiano": {
+      "title": "Cimiano",
+      "nodeId": "30",
+      "address": "26 Russel Court, Cambridge, CB2 1HW",
+      "lines": [
+        1
+      ],
+      "adjacency": [
+        {
+          "nodeId": 29,
+          "distance": 1.3359
+        },
+        {
+          "nodeId": 31,
+          "distance": 1.2493
+        }
+      ],
+      "position": {
+        "lat": 45.500649,
+        "lon": 9.240161
+      }
+    },
+    "Crescenzago": {
+      "title": "Crescenzago",
+      "nodeId": "29",
+      "address": "26 Russel Court, Cambridge, CB2 1HW",
+      "lines": [
+        1
+      ],
+      "adjacency": [
+        {
+          "nodeId": 28,
+          "distance": 1.7285
+        },
+        {
+          "nodeId": 30,
+          "distance": 1.3559
+        }
+      ],
+      "position": {
+        "lat": 45.504401,
+        "lon": 9.249684
+      }
+    },
+    "CascinaGobba": {
+      "title": "Cascina Gobba",
+      "nodeId": "28",
+      "address": "26 Russel Court, Cambridge, CB2 1HW",
+      "lines": [
+        1
+      ],
+      "adjacency": [
+        {
+          "nodeId": 29,
+          "distance": 1.7285
+        }
+      ],
+      "position": {
+        "lat": 45.511585,
+        "lon": 9.260576
+      }
+    },
+    "SAmbrogio": {
+      "title": "Sant\nAmbrogio",
+      "nodeId": "40",
+      "address": "26 Russel Court, Cambridge, CB2 1HW",
+      "lines": [
+        1
+      ],
+      "adjacency": [
+        {
+          "nodeId": 14,
+          "distance": 0.9220
+        },
+        {
+          "nodeId": 41,
+          "distance": 0.2916
+        }
+      ],
+      "position": {
+        "lat": 45.461804,
+        "lon": 9.173093
+      }
+    },
+    "SAgostino": {
+      "title": "Sant\nAgostino",
+      "nodeId": "41",
+      "address": "26 Russel Court, Cambridge, CB2 1HW",
+      "lines": [
+        1
+      ],
+      "adjacency": [
+        {
+          "nodeId": 40,
+          "distance": 0.2916
+        },
+        {
+          "nodeId": 42,
+          "distance": 0.9942
+        }
+      ],
+      "position": {
+        "lat": 45.460242,
+        "lon": 9.171542
+      }
+    },
+    "PTaGenovaFS": {
+      "title": "Porta Genova FS",
+      "nodeId": "42",
+      "address": "26 Russel Court, Cambridge, CB2 1HW",
+      "lines": [
+        1
+      ],
+      "adjacency": [
+        {
+          "nodeId": 41,
+          "distance": 0.9942
+        },
+        {
+          "nodeId": 43,
+          "distance": 1.1155
+        }
+      ],
+      "position": {
+        "lat": 45.452955,
+        "lon": 9.169747
+      }
+    },
+    "Romolo": {
+      "title": "Romolo",
+      "nodeId": "43",
+      "address": "26 Russel Court, Cambridge, CB2 1HW",
+      "lines": [
+        1
+      ],
+      "adjacency": [
+        {
+          "nodeId": 42,
+          "distance": 1.1155
+        },
+        {
+          "nodeId": 44,
+          "distance": 0.9221
+        }
+      ],
+      "position": {
+        "lat": 45.444806,
+        "lon": 9.167626
+      }
+    },
+    "Famagosta": {
+      "title": "Famagosta",
+      "nodeId": "44",
+      "address": "26 Russel Court, Cambridge, CB2 1HW",
+      "lines": [
+        1
+      ],
+      "adjacency": [
+        {
+          "nodeId": 43,
+          "distance": 0.9221
+        }
+      ],
+      "position": {
+        "lat": 45.437909,
+        "lon": 9.168568
+      }
+    },
+    "Repubblica": {
+      "title": "Repubblica",
+      "nodeId": "48",
+      "address": "26 Russel Court, Cambridge, CB2 1HW",
+      "lines": [
+        2
+      ],
+      "adjacency": [
+        {
+          "nodeId": 35,
+          "distance": 0.8585
+        },
+        {
+          "nodeId": 49,
+          "distance": 0.9004
+        }
+      ],
+      "position": {
+        "lat": 45.480292,
+        "lon": 9.198276
+      }
+    },
+    "Turati": {
+      "title": "Turati",
+      "nodeId": "49",
+      "address": "26 Russel Court, Cambridge, CB2 1HW",
+      "lines": [
+        2
+      ],
+      "adjacency": [
+        {
+          "nodeId": 48,
+          "Distance": 0.9004
+        },
+        {
+          "nodeId": 50,
+          "distance": 0.6295
+        }
+      ],
+      "position": {
+        "lat": 45.474438,
+        "lon": 9.194822
+      }
+    },
+    "Montenapoleone": {
+      "title": "Montenapoleone",
+      "nodeId": "50",
+      "address": "26 Russel Court, Cambridge, CB2 1HW",
+      "lines": [
+        2
+      ],
+      "adjacency": [
+        {
+          "nodeId": 49,
+          "distance": 0.6295
+        },
+        {
+          "nodeId": 11,
+          "distance": 0.8032
+        }
+      ],
+      "position": {
+        "lat": 45.470182,
+        "lon": 9.192707
+      }
+    },
+    "Missori": {
+      "title": "Missori",
+      "nodeId": "51",
+      "address": "26 Russel Court, Cambridge, CB2 1HW",
+      "lines": [
+        2
+      ],
+      "adjacency": [
+        {
+          "nodeId": 11,
+          "distance": 0.5462
+        },
+        {
+          "nodeId": 52,
+          "distance": 1.0289
+        }
+      ],
+      "position": {
+        "lat": 45.460117,
+        "lon": 9.189031
+      }
+    },
+    "Crocetta": {
+      "title": "Crocetta",
+      "nodeId": "52",
+      "address": "26 Russel Court, Cambridge, CB2 1HW",
+      "lines": [
+        2
+      ],
+      "adjacency": [
+        {
+          "nodeId": 51,
+          "distance": 1.0289
+        },
+        {
+          "nodeId": 53,
+          "distance": 1.1492
+        }
+      ],
+      "position": {
+        "lat": 45.456025,
+        "lon": 9.195632
+      }
+    },
+    "PortaRomana": {
+      "title": "Porta\nRomana",
+      "nodeId": "53",
+      "address": "26 Russel Court, Cambridge, CB2 1HW",
+      "lines": [
+        2
+      ],
+      "adjacency": [
+        {
+          "nodeId": 52,
+          "distance": 1.1492
+        },
+        {
+          "nodeId": 54,
+          "distance": 1.2064
+        }
+      ],
+      "position": {
+        "lat": 45.451491,
+        "lon": 9.203028
+      }
+    },
+    "LodiTibb": {
+      "title": "Lodi T.I.B.B.",
+      "nodeId": "54",
+      "address": "26 Russel Court, Cambridge, CB2 1HW",
+      "lines": [
+        2
+      ],
+      "adjacency": [
+        {
+          "nodeId": 53,
+          "distance": 1.2064
+        }
+      ],
+      "position": {
+        "lat": 45.446771,
+        "lon": 9.210816
+      }
+    },
+    "Sondrio": {
+      "title": "Sondrio",
+      "nodeId": "47",
+      "address": "26 Russel Court, Cambridge, CB2 1HW",
+      "lines": [
+        2
+      ],
+      "adjacency": [
+        {
+          "nodeId": 46,
+          "distance": 1.1585
+        },
+        {
+          "nodeId": 35,
+          "distance": 0.6288
+        }
+      ],
+      "position": {
+        "lat": 45.488981,
+        "lon": 9.200465
+      }
+    },
+    "Zara": {
+      "title": "Zara",
+      "nodeId": "46",
+      "address": "26 Russel Court, Cambridge, CB2 1HW",
+      "lines": [
+        2
+      ],
+      "adjacency": [
+        {
+          "nodeId": 45,
+          "distance": 1.3534
+        },
+        {
+          "nodeId": 47,
+          "distance": 1.1585
+        }
+      ],
+      "position": {
+        "lat": 45.492852,
+        "lon": 9.192623
+      }
+    },
+    "Maciachini": {
+      "title": "Maciachini",
+      "nodeId": "45",
+      "address": "26 Russel Court, Cambridge, CB2 1HW",
+      "lines": [
+        2
+      ],
+      "adjacency": [
+        {
+          "nodeId": 46,
+          "distance": 1.3534
+        }
+      ],
+      "position": {
+        "lat": 45.49734,
+        "lon": 9.183445
+      }
+    },
+    "Wagner": {
+      "title": "Wagner",
+      "nodeId": "21",
+      "address": "26 Russel Court, Cambridge, CB2 1HW",
+      "lines": [0],
+      "adjacency": [{
+          "nodeId": 16,
+          "distance": 0.7638
+        },{
+          "nodeId": 22,
+          "distance": 0.7861
+        }
+      ],
+      "position": {
+        "lat": 45.467841,
+        "lon": 9.155324
+      }
+    },
+    "DeAngelis": {
+      "title": "De Angelis",
+      "nodeId": "22",
+      "address": "26 Russel Court, Cambridge, CB2 1HW",
+      "lines": [0],
+      "adjacency": [{
+          "nodeId": 21,
+          "distance": 0.7861
+        },{
+          "nodeId": 23,
+          "distancia": 0.8951
+        }
+      ],
+      "position": {
+        "lat": 45.466464,
+        "lon": 9.149552
+      }
+    },
+    "Gambara": {
+      "title": "Gambara",
+      "nodeId": "23",
+      "address": "26 Russel Court, Cambridge, CB2 1HW",
+      "lines": [0],
+      "adjacency": [{
+          "nodeId": 22,
+          "distance": 0.8951
+        },{
+          "nodeId": 24,
+          "distance": 0.9689
+        }
+      ],
+      "position": {
+        "lat": 45.464914,
+        "lon": 9.142975
+      }
+    },
+    "BandeNere": {
+      "title": "Bande Nere",
+      "nodeId": "24",
+      "address": "26 Russel Court, Cambridge, CB2 1HW",
+      "lines": [0],
+      "adjacency": [{
+          "nodeId": 23,
+          "distance": 0.9689
+        }, {
+          "nodeId": 25,
+          "distance": 0.9970
+        }
+      ],
+      "position": {
+        "lat": 45.461543,
+        "lon": 9.136484
+      }
+    },
+    "Primaticcio": {
+      "title": "Primaticcio",
+      "nodeId": "25",
+      "address": "26 Russel Court, Cambridge, CB2 1HW",
+      "lines": [
+        0
+      ],
+      "adjacency": [
+        {
+          "nodeId": 24,
+          "distance": 0.9970
+        },
+        {
+          "nodeId": 26,
+          "distance": 0.9335
+        }
+      ],
+      "position": {
+        "lat": 45.459421,
+        "lon": 9.129263
+      }
+    },
+    "Inganni": {
+      "title": "Inganni",
+      "nodeId": "26",
+      "address": "26 Russel Court, Cambridge, CB2 1HW",
+      "lines": [
+        0
+      ],
+      "adjacency": [
+        {
+          "nodeId": 25,
+          "distance": 0.9335
+        },
+        {
+          "nodeId": 27,
+          "distance": 1.3045
+        }
+      ],
+      "position": {
+        "lat": 45.457427,
+        "lon": 9.122504
+      }
+    },
+    "Bisceglie": {
+      "title": "Bisceglie",
+      "nodeId": "27",
+      "address": "26 Russel Court, Cambridge, CB2 1HW",
+      "lines": [
+        0
+      ],
+      "adjacency": [
+        {
+          "nodeId": 26,
+          "distance": 1.3045
+        }
+      ],
+      "position": {
+        "lat": 45.455387,
+        "lon": 9.11287
+      }
+    }
+  },
+  "lines": [{
+    "name": "Villa San Giovanni-QT8",
+    "label": "Villa San Giovanni-QT8",
+    "color": "#FE2E2E ",
+    "lineId": 0,
+    "shiftCoords": [0, 0],
+    "nodes": [{
+      "coords": [-37, 12],
+      "name": "Qt8",
+      "labelPos": "SW",
+      "shiftCoords": [0, 0],
+      "canonical": true
+    },{
+      "coords": [-33, 8],
+      "name": "LottoFiera",
+      "labelPos": "SW",
+      "shiftCoords": [0, 0],
+      "canonical": true
+    },{
+      "coords": [-29, 4],
+      "name": "AmendolaFiera",
+      "labelPos": "SW",
+      "shiftCoords": [0, 0],
+      "canonical": true
+    },{
+      "coords": [-25, 0],
+      "name": "Buonarroti",
+      "labelPos": "SW",
+      "shiftCoords": [0, 0],
+      "canonical": true
+    },{
+      "coords": [-21, -4],
+      "name": "Pagano",
+      "labelPos": "N",
+      "shiftCoords": [1, 0],
+      "canonical": true
+    },{
+      "coords": [-14, -4],
+      "name": "Conciliazione",
+      "labelPos": "S",
+      "shiftCoords": [0, 0],
+      "canonical": true
+    },{
+      "coords": [-7, -4],
+      "marker": "interchange",
+      "name": "Cadorna",
+      "labelPos": "NW",
+      "shiftCoords": [0, 0],
+      "canonical": true
+    },{
+      "coords": [-3, -4],
+      "name": "Cairoli",
+      "labelPos": "N",
+      "shiftCoords": [0, 0],
+      "canonical": true
+    },{
+      "coords": [1, -4],
+      "name": "Cordusio",
+      "labelPos": "S",
+      "shiftCoords": [0, 0],
+      "canonical": true
+    },{
+      "coords": [9, -4],
+      "marker":"interchange",
+      "name": "Duomo",
+      "labelPos": "NW"
+    }, {
+      "coords": [19, -4],
+      "marker": "",
+      "name": "S.Babila",
+      "labelPos": "S",
+      "shiftCoords": [0, 0],
+      "canonical": true
+    },{
+      "coords": [26, -4],
+      "name": "Palestro",
+      "labelPos": "S",
+      "shiftCoords": [0, 0],
+      "canonical": true
+    },{
+      "coords": [37, -4],
+      "name": "PTaVenezia",
+      "labelPos": "S",
+      "shiftCoords": [0, 0],
+      "canonical": true
+    },{
+      "coords": [41,0],
+      "dir":"E"
+    },{
+      "coords": [41, 1],
+      "name": "Lima",
+      "labelPos": "E",
+      "shiftCoords": [0, 0],
+      "canonical": true
+    },{
+      "coords": [41, 12.3],
+      "marker": "interchange",
+      "name": "Loreto",
+      "labelPos": "NE",
+      "shiftCoords": [0, 0],
+      "canonical": true
+    },{
+      "coords": [41, 19],
+      "name": "Pasteur",
+      "labelPos": "E",
+      "shiftCoords": [0, 0],
+      "canonical": true
+    },{
+      "coords": [41, 29],
+      "name": "Rovereto",
+      "labelPos": "E",
+      "shiftCoords": [0, 0],
+      "canonical": true
+    },{
+      "coords": [41, 39],
+      "name": "Turro",
+      "labelPos": "E",
+      "shiftCoords": [0, 0],
+      "canonical": true
+    },{
+      "coords": [41, 49],
+      "name": "Gorla",
+      "labelPos": "E",
+      "shiftCoords": [0, 0],
+      "canonical": true
+    },{
+      "coords": [41, 59],
+      "name": "Precotto",
+      "labelPos": "E",
+      "shiftCoords": [0, 0],
+      "canonical": true
+    },{
+      "coords": [41, 69],
+      "name": "VillaSanGiovanni",
+      "labelPos": "E",
+      "shiftCoords": [0, 0],
+      "canonical": true
+    }]
+  },{
+    "name": "Blanca",
+    "label": "Blanca",
+    "color": "#FFFFFF",
+    "lineId": 4,
+    "shiftCoords": [0, 1],
+    "nodes": [{
+      "coords":[41,69]
+    },{
+      "coords":[41,79]
+    }]
+  },{
+      "name": "Pagano-Bisceglie",
+      "label": "Pagano-Bisceglie",
+      "color": "#FE2E2E",
+      "lineId": 0,
+      "shiftCoords": [0, 1],
+      "nodes": [{
+        "coords":[-21,-5],
+        "dir":"W"
+      },{
+        "coords": [-25, -9],
+        "name": "Wagner",
+        "labelPos": "SE",
+        "shiftCoords": [0, 1],
+        "canonical": true
+      },{
+        "coords": [-29, -13],
+        "name": "DeAngelis",
+        "labelPos": "SE",
+        "shiftCoords": [0, 1],
+        "canonical": true
+      },{
+        "coords": [-33, -17],
+        "name": "Gambara",
+        "labelPos": "SE",
+        "shiftCoords": [0, 1],
+        "canonical": true
+      },{
+        "coords": [-37, -21],
+        "name": "BandeNere",
+        "labelPos": "SE",
+        "shiftCoords": [0, 1],
+        "canonical": true
+      },{
+        "coords": [-41, -25],
+        "name": "Primaticcio",
+        "labelPos": "SE",
+        "shiftCoords": [0, 1],
+        "canonical": true
+      },{
+        "coords": [-45, -29],
+        "name": "Inganni",
+        "labelPos": "SE",
+        "shiftCoords": [0, 1],
+        "canonical": true
+      },{
+        "coords": [-49, -33],
+        "name": "Bisceglie",
+        "labelPos": "SE",
+        "shiftCoords": [0, 1],
+        "canonical": true
+      }]
+  },{
+    "name": "Blanca2",
+    "label": "Blanca2",
+    "color": "#FFFFFF",
+    "lineId": 5,
+    "shiftCoords": [0, 0],
+    "nodes": [{
+      "coords":[-49,-33]
+    },{
+      "coords":[-59,-43]
+    }]
+  },{
+    "name": "Cascina Gobba-Famagosta",
+    "label": "Cascina Gobba-Famagosta",
+    "color": "#04B404",
+    "lineId": 1,
+    "shiftCoords": [0, 1],
+    "nodes": [{
+      "coords": [-7, -34],
+      "name": "Famagosta",
+      "labelPos": "E",
+      "shiftCoords": [0, 2],
+      "canonical": true
+    },{
+      "coords": [-7, -28],
+      "name": "Romolo",
+      "labelPos": "E",
+      "shiftCoords": [0, 2],
+      "canonical": true
+    },{
+      "coords": [-7, -22],
+      "name": "PTaGenovaFS",
+      "labelPos": "E",
+      "shiftCoords": [0, 2],
+      "canonical": true
+    },{
+      "coords": [-7, -16],
+      "name": "SAgostino",
+      "labelPos": "E",
+      "shiftCoords": [0, 2],
+      "canonical": true
+    },{
+      "coords": [-7, -10],
+      "name": "SAmbrogio",
+      "labelPos": "E",
+      "shiftCoords": [0, 2],
+      "canonical": true
+    },{
+      "coords": [-7,-4]
+    },{
+      "coords": [-4, -1],
+      "name": "Lanza",
+      "labelPos": "NW",
+      "shiftCoords": [-1, 0],
+      "canonical": true
+    },{
+      "coords": [0, 3],
+      "name": "Moscova",
+      "labelPos": "SE",
+      "shiftCoords": [-1, 0],
+      "canonical": true
+    },{
+      "coords": [4, 7],
+      "name": "Garibaldi",
+      "labelPos": "SE",
+      "shiftCoords": [-1, 0],
+      "canonical": true
+    },{
+      "coords": [8, 11],
+      "name": "Gioia",
+      "labelPos": "NW",
+      "shiftCoords": [-1, 0],
+      "canonical": true
+    },{
+      "coords": [21, 11],
+      "marker":"interchange",
+      "name": "Centrale",
+      "labelPos": "NW",
+      "shiftCoords": [0, 1],
+      "canonical": true
+    },{
+      "coords": [27, 11],
+      "name": "Caiazzo",
+      "labelPos": "N",
+      "shiftCoords": [0, 1],
+      "canonical": true
+    },{
+      "coords": [41,11],
+      "dir":"E"
+    },{
+      "coords": [52, 11],
+      "name": "Piola",
+      "labelPos": "S",
+      "shiftCoords": [0, 1],
+      "canonical": true
+    },{
+      "coords": [63, 11],
+      "name": "LambrateFS",
+      "labelPos": "S",
+      "shiftCoords": [0, 1],
+      "canonical": true
+    },{
+      "coords":[70,18],
+      "dir":"E"
+    },{
+      "coords": [70, 20],
+      "name": "Udine",
+      "labelPos": "E",
+      "shiftCoords": [0, 0],
+      "canonical": true
+    },{
+      "coords": [70, 30],
+      "name": "Cimiano",
+      "labelPos": "E",
+      "shiftCoords": [0, 0],
+      "canonical": true
+    },{
+      "coords": [70, 40],
+      "name": "Crescenzago",
+      "labelPos": "E",
+      "shiftCoords": [0, 0],
+      "canonical": true
+    },{
+      "coords": [70, 50],
+      "name": "CascinaGobba",
+      "labelPos": "E",
+      "shiftCoords": [0, 0],
+      "canonical": true
+    }]
+  },{
+    "name": "Maciachini- Lodi Tibb",
+    "label": "Maciachini- Lodi Tibb",
+    "color": "#ffff00",
+    "lineId": 2,
+    "shiftCoords": [0, 1],
+    "nodes": [{
+      "coords": [-3,39],
+      "name": "Maciachini",
+      "labelPos": "NE",
+      "shiftCoords": [0, 1],
+      "canonical": true
+    },{
+      "coords": [5,31],
+      "name": "Zara",
+      "labelPos": "NE",
+      "shiftCoords": [0, 1],
+      "canonical": true
+    },{
+      "coords": [13,23],
+      "name": "Sondrio",
+      "labelPos": "NE",
+      "shiftCoords": [0, 1],
+      "canonical": true
+    },{
+      "coords": [21,15],
+      "dir":"N"
+    },{
+      "coords": [21,8],
+      "name": "Repubblica",
+      "labelPos": "SE",
+      "shiftCoords": [0, 1],
+      "canonical": true
+    },{
+      "coords": [17,4],
+      "name": "Turati",
+      "labelPos": "SE",
+      "shiftCoords": [-1, 0],
+      "canonical": true
+    },{
+      "coords": [13,0],
+      "name": "Montenapoleone",
+      "labelPos": "SE",
+      "shiftCoords": [-1, 0],
+      "canonical": true
+    },{
+      "coords": [9,-4],
+      "dir": "W"
+    },{
+      "coords": [9,-11],
+      "dir":"S"
+    },{
+      "coords": [13,-15],
+      "name": "Missori",
+      "labelPos": "SW",
+      "shiftCoords": [0, 1],
+      "canonical": true
+    },{
+      "coords": [17,-19],
+      "name": "Crocetta",
+      "labelPos": "SW",
+      "shiftCoords": [0, 1],
+      "canonical": true
+    },{
+      "coords": [21,-23],
+      "name": "PortaRomana",
+      "labelPos": "SW",
+      "shiftCoords": [0, 1],
+      "canonical": true
+    },{
+      "coords": [25,-27],
+      "name": "LodiTibb",
+      "labelPos": "SW",
+      "shiftCoords": [0, 1],
+      "canonical": true
+    }]
+  }],
+  "river": {
+    "name": "River",
+    "label": "River",
+    "shiftCoords": [0, 0],
+    "nodes":{}
+  }
+}
