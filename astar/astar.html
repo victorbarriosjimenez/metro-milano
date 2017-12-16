@@ -46,7 +46,7 @@
 
 <div class="modal" id="mostrarResultado" aria-hidden="true">
     <div class="modal-dialog modal-md">
-        <div class="modal-content">
+        <div class="modal-content" style="padding-bottom: 5px;">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><i
                         class="icons-office-52"></i></button>
@@ -55,11 +55,13 @@
                 </h4>
             </div>
             <div class="row" style="text-align: center; box-shadow: none">
-                El tiempo de viaje aproximado es: {{viaje | number:0}} minutos.
+                El tiempo de viaje aproximado es: <strong> {{viaje | number:0}} minutos</strong>
             </div>
+            <div class="text-center" style="margin: 20px  0px 0px -60px; font-size:1.2em; font-family: 'Josefin Sans', sans-serif;"> Origen</div>
             <div class="modal-body" id="mapa">
 
             </div>
+            <div class="text-center" style="margin: 0px -90px 30px 0px; font-size:1.2em; font-family: 'Josefin Sans', sans-serif;" >Destino</div>
         </div>
     </div>
 </div>

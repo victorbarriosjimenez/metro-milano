@@ -1,5 +1,6 @@
 var gulp = require('gulp'),
     browserSync = require('browser-sync').create(),
+    uglify = require('gulp-uglify'),
     htmlmin =  require('gulp-htmlmin');
 gulp.task('serve',function(){
     browserSync.init({
@@ -21,7 +22,6 @@ gulp.task('images', function(){
 });
 gulp.task('scripts',function(){
     gulp.src('js/*.js')
-        .pipe(uglify())
         .pipe(gulp.dest('dist/js'));
 });
 gulp.task('watch', function( ){
@@ -37,4 +37,16 @@ gulp.task('styles', function( ){
     gulp.watch('css/*.css')
         .on('change', browserSync.reload);
 });
-gulp.task('default',['serve','fonts','styles','images','scripts','watch']);
+gulp.task('json', function( ){
+    gulp.src('json/*.json')
+        .pipe(gulp.dest('dist/json'));
+});
+gulp.task('astar', function( ){
+    gulp.src('astar/*.*')
+        .pipe(gulp.dest('dist/astar'));
+});
+gulp.task('dashboard', function( ){
+    gulp.src('dashboard/*.*')
+        .pipe(gulp.dest('dist/dashboard'));
+});
+gulp.task('default',['serve','styles','images','json','scripts','astar','dashboard','watch']);

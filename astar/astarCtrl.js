@@ -6,26 +6,61 @@ angular.module('newApp')
     .controller('astarCtrl', ['$scope', '$route', '$http', function ($scope, $route, $http) {
         var nodoOrigen;
         var nodoDestino;
+        var listaAdyacencia = [];
         //llama tube-map
         var el = document.getElementById('tube-map');
-        //Devuelve nombres de estaciones
-        $http.get('json/objetosMetroMilanver5.json')
-            .then(function (response) {
-                $scope.estaciones = response.data.stationMetroMilan;
-                $scope.listaEstaciones = [];
-                angular.forEach(response.data.stationMetroMilan, function (stationMetroMilan) {
-                    $scope.listaEstaciones.push({
-                        nombre: stationMetroMilan.stationName,
-                        nodo: stationMetroMilan.nodeId
-                    });
+        var json = $http.get('json/objetosMetroMilanver5.json');
+
+        json.then(function (response) {
+            var estaciones = response.data.stationMetroMilan;
+            $scope.listaEstaciones = [];
+            angular.forEach(estaciones, function (stationMetroMilan) {
+                $scope.listaEstaciones.push({
+                    nombre: stationMetroMilan.stationName,
+                    nodo: stationMetroMilan.nodeId
                 });
+                listaAdyacencia.push(stationMetroMilan.adjacency);
             });
+
+            $scope.calcularRuta = function () {
+                console.time("test");
+                var origen = nodoOrigen;
+                var destino = nodoDestino;
+                var listaAdy = listaAdyacencia;
+                var aerialDist = response.data.aerialDistance;
+                var listaEstaciones = $scope.listaEstaciones;
+                var infoEstaciones = [];
+                $scope.listaNombres = [];
+                var resultado = aStar(listaAdy, aerialDist, origen, destino);
+                for (var i = 0; i < resultado.length; i++) {
+                    for (var j = 0; j < listaEstaciones.length; j++) {
+                        if (resultado[i] == listaEstaciones[j].nodo) {
+                            $scope.listaNombres.push(listaEstaciones[j].nombre);
+                        }
+                    }
+                }
+                var nombreEstacion = $scope.listaNombres;
+                $scope.viaje = calcularTiempo(resultado, estaciones);
+
+                for (var i = 0; i < nombreEstacion.length; i++) {
+                    for (var j = 0; j < estaciones.length; j++) {
+                        if (nombreEstacion[i] == estaciones[j].stationName) {
+                            infoEstaciones.push({
+                                nombre: estaciones[j].stationName,
+                                linea: estaciones[j].lines
+                            });
+                        }
+                    }
+                }
+                listaNombre(infoEstaciones);
+            }
+        });
+
         //Dibuja Mapa
         var svg = d3.select(el)
             .append('svg')
             .style('width', '600')
-            .style('height', '600');
-        ;
+            .style('height', '600');;
 
         var width = 720;
         var height = 600;
@@ -39,15 +74,15 @@ angular.module('newApp')
                 bottom: height / 10,
                 left: width / 10,
             });
+
         //llama json con datos de las estaciones
         d3.json("./json/pubs.json", function (error, data) {
             svg.datum(data).call(map);
         });
 
-        //algoritmo de busqueda
-
         getNodoOrigen();
-
+        getNodoDestino();
+        
         function getNodoOrigen() {
             $scope.$watch('selectedEstacionOrigen', function (newValue, oldValue) {
                 if (newValue == oldValue) {
@@ -57,8 +92,6 @@ angular.module('newApp')
                 }
             });
         }
-
-        getNodoDestino();
 
         function getNodoDestino() {
             $scope.$watch('selectedEstacionDestino', function (newValue, oldValue) {
@@ -70,164 +103,119 @@ angular.module('newApp')
             });
         }
 
-        $http.get('json/objetosMetroMilanver5.json')
-            .then(function (response) {
-                $scope.listaAdyacencia = [];
-                var datosJson = response.data.stationMetroMilan;
-                $scope.distanciaAerea = response.data.aerialDistance;
-                angular.forEach(response.data.stationMetroMilan, function (stationMetroMilan) {
-                    $scope.listaAdyacencia.push(stationMetroMilan.adjacency);
-                });
-                console.time("test");
-                $scope.calcularRuta = function () {
-                    var origen = nodoOrigen;
-                    var destino = nodoDestino;
-                    var listaAdy = $scope.listaAdyacencia;
-                    var aerialDist = $scope.distanciaAerea;
-                    $scope.infoEstaciones = [];
-                    $scope.listaNombres = [];
-                    $scope.resultado = [];
-                    $scope.resultado = aStar(listaAdy, aerialDist, origen, destino);
-                    for (var i = 0; i < $scope.resultado.length; i++) {
-                        for (var j = 0; j < $scope.listaEstaciones.length; j++) {
-                            if ($scope.resultado[i] == $scope.listaEstaciones[j].nodo) {
-                                $scope.listaNombres.push($scope.listaEstaciones[j].nombre);
+        function calcularTiempo(resultado, datos) {
+            var distancia = 0;
+            var velocidad = 45;
+            for (var i = 0; i < resultado.length; i++) {
+                for (var j = 0; j < datos.length; j++) {
+                    if (resultado[i] == datos[j].nodeId) {
+                        var adyacencia = datos[j].adjacency;
+                        for (var k = 0; k < adyacencia.length; k++) {
+                            if (resultado[i + 1] == adyacencia[k].nodeId) {
+                                distancia += adyacencia[k].distance;
                             }
                         }
                     }
-
-                    $scope.viaje = calcularTiempo($scope.resultado, datosJson);
-                    function calcularTiempo(resultado, datos) {
-                        var distancia = 0;
-                        var velocidad = 50;
-                        for (var i = 0; i < resultado.length; i++) {
-                            for (var j = 0; j < datos.length; j++) {
-                                if (resultado[i] == datos[j].nodeId) {
-                                    var adyacencia = datos[j].adjacency;
-                                    for(var k = 0;k<adyacencia.length;k++){
-                                        if(resultado[i+1]==adyacencia[k].nodeId){
-                                            distancia+=adyacencia[k].distance;
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                        return ((distancia / velocidad) + ((resultado.length - 2) * 60) / 3600) * 60;
-                    }
-
-                    $http.get('json/objetosMetroMilanver5.json')
-                        .then(function (response) {
-                            var y = 0;
-                            for (var i = 0; i < $scope.listaNombres.length; i++) {
-                                for (var j = 0; j < response.data.stationMetroMilan.length; j++) {
-                                    if ($scope.listaNombres[i] == response.data.stationMetroMilan[j].stationName) {
-                                        $scope.infoEstaciones.push({
-                                            nombre: response.data.stationMetroMilan[j].stationName,
-                                            linea: response.data.stationMetroMilan[j].lines
-                                        });
-                                    }
-                                }
-                            }
-                            var ul = document.createElement('ul');
-                            ul.setAttribute('id', 'class');
-                            ul.style.listStyle = "none";
-                            ul.style.position = "relative";
-                            ul.style.left = "50%";
-                            var t;
-                            document.getElementById('mapa').appendChild(ul);
-                            listaNombre($scope.infoEstaciones);
-
-                            function listaNombre(lista) {
-                                for (var i = 0; i < lista.length; i++) {
-                                    var nombre = lista[i].nombre;
-                                    var linea = lista[i].linea;
-                                    if(i!=0){
-                                        var anterior = lista[i-1].linea;
-                                    }
-                                    if (linea.length > 1 && lista[i + 1] != undefined) {
-                                        let siguiente = lista[i + 1].nombre;
-                                        if ((siguiente == "Caiazzo" || siguiente == "Milano Centrale" || siguiente == "Gioia" || siguiente == "Lanza" || siguiente == "Sant'Ambrogio" || siguiente == "Piola") && siguiente != null) {
-                                            var li = document.createElement('li');
-                                            li.setAttribute('class', 'item');
-                                            li.style.borderLeft = "10px solid green";
-                                            li.style.lineHeight = "40px";
-                                            ul.appendChild(li);
-                                            t = document.createTextNode(nombre);
-                                            li.innerHTML = li.innerHTML + '-' + nombre;
-                                        } else {
-                                            if (siguiente == "Pasteur" || siguiente == "Lima" || siguiente == "San Babila" || siguiente == "Cordusio" || siguiente == "Cairoli" || siguiente == "Conciliazione") {
-                                                var li = document.createElement('li');
-                                                li.setAttribute('class', 'item');
-                                                li.style.borderLeft = "10px solid red";
-                                                li.style.lineHeight = "40px";
-                                                ul.appendChild(li);
-                                                t = document.createTextNode(nombre);
-                                                li.innerHTML = li.innerHTML + '-' + nombre;
-                                            } else {
-                                                if (siguiente == "Sondrio" || siguiente == "Repubblica" || siguiente == "Montenapoleone" || siguiente == "Missori") {
-                                                    var li = document.createElement('li');
-                                                    li.setAttribute('class', 'item');
-                                                    li.style.borderLeft = "10px solid yellow";
-                                                    li.style.lineHeight = "40px";
-                                                    ul.appendChild(li);
-                                                    t = document.createTextNode(nombre);
-                                                    li.innerHTML = li.innerHTML + '-' + nombre;
-                                                }
-                                            }
-                                        }
-                                    } else {
-                                        if (nombre == "Cadorna" && anterior[0] == 1) {
-                                            var li = document.createElement('li');
-                                            li.setAttribute('class', 'item');
-                                            li.style.borderLeft = "10px solid green";
-                                            li.style.lineHeight = "40px";
-                                            ul.appendChild(li);
-                                            t = document.createTextNode(nombre);
-                                            li.innerHTML = li.innerHTML + '-' + nombre;
-                                        } else {
-                                            if (linea[0] == 0) {
-                                                var li = document.createElement('li');
-                                                li.setAttribute('class', 'item');
-                                                li.style.borderLeft = "10px solid red";
-                                                li.style.lineHeight = "40px";
-                                                ul.appendChild(li);
-                                                t = document.createTextNode(nombre);
-                                                li.innerHTML = li.innerHTML + '-' + nombre;
-                                            } else {
-                                                if (linea[0] == 1) {
-                                                    var li = document.createElement('li');
-                                                    li.setAttribute('class', 'item');
-                                                    li.style.borderLeft = "10px solid green";
-                                                    li.style.lineHeight = "40px";
-                                                    ul.appendChild(li);
-                                                    t = document.createTextNode(nombre);
-                                                    li.innerHTML = li.innerHTML + '-' + nombre;
-                                                } else {
-                                                    if (linea[0] == 2) {
-                                                        var li = document.createElement('li');
-                                                        li.setAttribute('class', 'item');
-                                                        li.style.borderLeft = "10px solid yellow";
-                                                        li.style.lineHeight = "40px";
-                                                        ul.appendChild(li);
-                                                        t = document.createTextNode(nombre);
-                                                        li.innerHTML = li.innerHTML + '-' + nombre;
-                                                    }
-                                                }
-                                            }
-                                        }
-                                    }
-                                }
-                                console.timeEnd("test");
-                                $(document).ready(function () {
-                                    $(".modal").on("hidden.bs.modal", function () {
-                                        ul.remove(li);
-                                    });
-                                });
-                            }
-                        });
                 }
-            });
+            }
+            return ((distancia / velocidad) + ((resultado.length - 2) * 60) / 3600) * 60;
+        }
 
+        function listaNombre(lista) {
+            var t;
+            var ul = document.createElement('ul');
+            ul.setAttribute('id', 'class');
+            ul.style.listStyle = "none";
+            ul.style.position = "relative";
+            ul.style.left = "50%";
+            document.getElementById('mapa').appendChild(ul);
+
+            for (var i = 0; i < lista.length; i++) {
+                var nombre = lista[i].nombre;
+                var linea = lista[i].linea;
+                if (i != 0) {
+                    var anterior = lista[i - 1].linea;
+                }
+                if (linea.length > 1 && lista[i + 1] != undefined) {
+                    let siguiente = lista[i + 1].nombre;
+                    if ((siguiente == "Caiazzo" || siguiente == "Milano Centrale" || siguiente == "Gioia" || siguiente == "Lanza" || siguiente == "Sant'Ambrogio" || siguiente == "Piola") && siguiente != null) {
+                        var li = document.createElement('li');
+                        li.setAttribute('class', 'item');
+                        li.style.borderLeft = "7px solid green";
+                        li.style.lineHeight = "40px";
+                        ul.appendChild(li);
+                        t = document.createTextNode(nombre);
+                        li.innerHTML = li.innerHTML + nombre;
+                    } else {
+                        if (siguiente == "Pasteur" || siguiente == "Lima" || siguiente == "San Babila" || siguiente == "Cordusio" || siguiente == "Cairoli" || siguiente == "Conciliazione") {
+                            var li = document.createElement('li');
+                            li.setAttribute('class', 'item');
+                            li.style.borderLeft = "7px solid red";
+                            li.style.lineHeight = "40px";
+                            ul.appendChild(li);
+                            t = document.createTextNode(nombre);
+                            li.innerHTML = li.innerHTML + nombre;
+                        } else {
+                            if (siguiente == "Sondrio" || siguiente == "Repubblica" || siguiente == "Montenapoleone" || siguiente == "Missori") {
+                                var li = document.createElement('li');
+                                li.setAttribute('class', 'item');
+                                li.style.borderLeft = "7px solid yellow";
+                                li.style.lineHeight = "40px";
+                                ul.appendChild(li);
+                                t = document.createTextNode(nombre);
+                                li.innerHTML = li.innerHTML + nombre;
+                            }
+                        }
+                    }
+                } else {
+                    if (nombre == "Cadorna" && anterior[0] == 1) {
+                        var li = document.createElement('li');
+                        li.setAttribute('class', 'item');
+                        li.style.borderLeft = "7px solid green";
+                        li.style.lineHeight = "40px";
+                        ul.appendChild(li);
+                        t = document.createTextNode(nombre);
+                        li.innerHTML = li.innerHTML + nombre;
+                    } else {
+                        if (linea[0] == 0) {
+                            var li = document.createElement('li');
+                            li.setAttribute('class', 'item');
+                            li.style.borderLeft = "7px solid red";
+                            li.style.lineHeight = "40px";
+                            ul.appendChild(li);
+                            t = document.createTextNode(nombre);
+                            li.innerHTML = li.innerHTML + nombre;
+                        } else {
+                            if (linea[0] == 1) {
+                                var li = document.createElement('li');
+                                li.setAttribute('class', 'item');
+                                li.style.borderLeft = "7px solid green";
+                                li.style.lineHeight = "40px";
+                                ul.appendChild(li);
+                                t = document.createTextNode(nombre);
+                                li.innerHTML = li.innerHTML + nombre;
+                            } else {
+                                if (linea[0] == 2) {
+                                    var li = document.createElement('li');
+                                    li.setAttribute('class', 'item');
+                                    li.style.borderLeft = "7px solid yellow";
+                                    li.style.lineHeight = "40px";
+                                    ul.appendChild(li);
+                                    t = document.createTextNode(nombre);
+                                    li.innerHTML = li.innerHTML + nombre;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            console.timeEnd("test");
+            $(document).ready(function () {
+                $(".modal").on("hidden.bs.modal", function () {
+                    ul.remove(li);
+                });
+            });
+        }
 
         //Fibonacci
         var FibonacciHeap = function (customCompare) {
@@ -602,7 +590,7 @@ angular.module('newApp')
 
 
         //aStar
-        function aStar(adjacencyList, aerialDistances, start, goal){
+        function aStar(adjacencyList, aerialDistances, start, goal) {
 
             let n = adjacencyList.length;
             let closedSet = new Array(n).fill(false);
@@ -618,40 +606,40 @@ angular.module('newApp')
 
             openSet[start] = heap.insert(fScore[start], start);
 
-            while(! heap.isEmpty()){
+            while (!heap.isEmpty()) {
                 var current = heap.extractMinimum().value;
-                if(current == goal)
+                if (current == goal)
                     return reconstructPath(cameFrom, current);
 
                 openSet[current] = null;
                 closedSet[current] = true;
 
                 //for(let {neighbor, distance} in adjacencyList[current]){
-                for(var i=0;i<adjacencyList[current].length;i++){
-                    var neighbor=adjacencyList[current][i].nodeId;
-                    var distance=adjacencyList[current][i].distance;
-                    if(closedSet[neighbor])
+                for (var i = 0; i < adjacencyList[current].length; i++) {
+                    var neighbor = adjacencyList[current][i].nodeId;
+                    var distance = adjacencyList[current][i].distance;
+                    if (closedSet[neighbor])
                         continue;// Ignore the neighbor which is already evaluated.
 
-                    if(openSet[neighbor]==null)// Discover a new node
+                    if (openSet[neighbor] == null)// Discover a new node
                         openSet[neighbor] = heap.insert(fScore[neighbor], neighbor);
 
                     var tentative_gScore = gScore[current] + distance;
-                    if(tentative_gScore >= gScore[neighbor])
+                    if (tentative_gScore >= gScore[neighbor])
                         continue;// This is not a better path.
 
                     // This path is the best until now. Record it!
                     cameFrom[neighbor] = current;
                     gScore[neighbor] = tentative_gScore;
                     fScore[neighbor] = gScore[neighbor] + hScore[neighbor];
-                    heap.decreaseKey(openSet[neighbor],fScore[neighbor]);
+                    heap.decreaseKey(openSet[neighbor], fScore[neighbor]);
                 }
             }
             return null;
         }
 
-        function reconstructPath(cameFrom, current){
-            if(cameFrom[current]==null)
+        function reconstructPath(cameFrom, current) {
+            if (cameFrom[current] == null)
                 return [current];
             else
                 return reconstructPath(cameFrom, cameFrom[current]).concat([current]);

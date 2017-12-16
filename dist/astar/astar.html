@@ -1,0 +1,67 @@
+<div class="row">
+    <div class="col-lg-12">
+        <div class="panel">
+            <div class="col-md-8 panel">
+                <div class="panel-header">
+                    <h3>
+                        <center><strong>Mapa Metropolitano de Milano</strong></center>
+                    </h3>
+                </div>
+                <div class="panel-content table-responsive" id="tube-map"></div>
+            </div>
+            <div class="col-md-4 panel">
+                <div class="panel-header">
+                    <h3><strong>Trayecto Recomendado</strong></h3>
+                </div>
+                <div class="panel-content table-responsive">
+                    <div class="form-group">
+                        <label class="control-label">Estación Origen</label>
+                        <select class="form-control" ng-model="selectedEstacionOrigen"
+                                ng-options="p.nombre for p in listaEstaciones | orderBy: 'nombre'" required>
+                        </select>
+
+                    </div>
+                    <center>
+                        <div id="calcularRuta"></div>
+                    </center>
+                    <div class="form-group">
+                        <label class="control-label">Estación Destino</label>
+                        <select class="form-control" ng-model="selectedEstacionDestino"
+                                ng-options=" p.nombre for p in listaEstaciones | orderBy: 'nombre'" required>
+                        </select>
+                    </div>
+                    <div class="modal-footer text-center">
+                        <button type="button" class="btn btn-primary btn-embossed bnt-square" ng-disabled="selectedEstacionOrigen==selectedEstacionDestino"
+                                data-ng-click="calcularRuta()" data-target="#mostrarResultado" data-toggle="modal"
+                                data-dismiss="modal"><i class="fa fa-check" required></i>
+                            Calcular Ruta
+                        </button>
+                        <p ng-show="selectedEstacionOrigen==selectedEstacionDestino" style="color: red; text-align: center; "> Nota: Estación origen y destino no pueden ser las mismas.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal" id="mostrarResultado" aria-hidden="true">
+    <div class="modal-dialog modal-md">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><i
+                        class="icons-office-52"></i></button>
+                <h4 class="modal-title">
+                    <center><strong>Trayecto</strong> recomendado</center>
+                </h4>
+            </div>
+            <div class="row" style="text-align: center; box-shadow: none">
+                El tiempo de viaje aproximado es: {{viaje | number:0}} minutos.
+            </div>
+            <div class="modal-body" id="mapa">
+
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+

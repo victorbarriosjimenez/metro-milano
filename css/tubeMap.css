@@ -39,3 +39,19 @@ text {
   transition: transform 0.5s ease-in-out;
   transform-origin: 50% 50%;
 }
+.item {
+  color: rgba(12, 14, 14, 0.78);
+  list-style-type: none;
+  padding-left: 15px;
+  font-family: 'Josefin Sans', sans-serif;
+}
+.item:first-child  {
+  color: rgba(2, 0, 4, 0.99);
+  font-weight: bolder;
+  padding-left: 5px;
+}
+.item:last-child  {
+  color: rgba(2, 0, 4, 0.99);
+  font-weight: bolder;
+  padding-left: 5px;
+}
